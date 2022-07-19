@@ -1,2 +1,2 @@
-# Myer-automation
-wdio based myer automation
+# Target-automation
+wdio based Target automation

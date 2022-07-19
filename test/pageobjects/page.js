@@ -1,7 +1,7 @@
-const openMyerPage = (path)=> {
-    return browser.url(`https://www.myer.com.au/${path}`)
+const openTargetPage = (path)=> {
+    return browser.url(`https://www.Target.com.au/${path}`)
 }
 
 module.exports = {
-    openMyerPage 
+    openTargetPage 
 }

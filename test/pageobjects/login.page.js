@@ -1,13 +1,40 @@
 
 
-const MyerPage = require('./page');
+const TargetPage = require('./page');
 const openloginPage = ()=> {
-    MyerPage.openMyerPage('login')
+    TargetPage.openTargetPage('login')
 }
 
-module.exports = {
-    openloginPage
+const setInputValue = async (var1, var2) => {
+    const inputText = $(var1);
+    await inputText.setValue(var2);
 }
+
+const enterLoginDetails = async ()=> {
+    const Target_username = process.env.TARGET_USERNAME;
+    const Target_password = process.env.TARGET_PASSWORD;
+
+    // const emailInput = $('input[id="email"]');
+    // emailInput.setValue(Target_username);
+
+    // const passwordInput = $('input[id="email"]');
+    // passwordInput.setValue(Target_password);
+
+    await setInputValue( 'input[id="email"]', Target_username );
+    await setInputValue( 'input[id="password"]', Target_password );
+
+    await $('button[id="login-submit"]').click();
+    
+}
+
+
+
+module.exports = {
+    openloginPage,
+    enterLoginDetails
+}
+
+
 
 
 
@@ -26,7 +53,7 @@ module.exports = {
 /**
  * sub page containing specific selectors and methods for a specific page
  */
-// class LoginPage extends MyerPage {
+// class LoginPage extends TargetPage {
 //     /**
 //      * define selectors using getter methods
 //      */

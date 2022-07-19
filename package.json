@@ -1,22 +1,22 @@
 {
-  "name": "myer-automation-testing",
+  "name": "Target-automation-testing",
   "version": "1.0.0",
-  "description": "wdio based myer automation",
+  "description": "wdio based Target automation",
   "main": "index.js",
   "scripts": {
     "test": "wdio run wdio.conf.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tanutester/Myer-automation.git"
+    "url": "git+https://github.com/tanutester/Target-automation.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tanutester/Myer-automation/issues"
+    "url": "https://github.com/tanutester/Target-automation/issues"
   },
-  "homepage": "https://github.com/tanutester/Myer-automation#readme",
+  "homepage": "https://github.com/tanutester/Target-automation#readme",
   "devDependencies": {
     "@wdio/cli": "^7.20.7",
     "@wdio/local-runner": "^7.20.7",
