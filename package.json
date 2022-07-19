@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/tanutester/Myer-automation/issues"
   },
-  "homepage": "https://github.com/tanutester/Myer-automation#readme"
+  "homepage": "https://github.com/tanutester/Myer-automation#readme",
+  "devDependencies": {
+    "@wdio/cli": "^7.20.7"
+  }
 }
