@@ -1,2 +1,2 @@
-# Target-automation
-wdio based Target automation
+# Officeworks-automation
+wdio based Officeworks automation

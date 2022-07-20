@@ -1,22 +1,22 @@
 {
-  "name": "Target-automation-testing",
+  "name": "Officeworks-automation-testing",
   "version": "1.0.0",
-  "description": "wdio based Target automation",
+  "description": "wdio based Officeworks automation",
   "main": "index.js",
   "scripts": {
     "test": "wdio run wdio.conf.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tanutester/Target-automation.git"
+    "url": "git+https://github.com/tanutester/Officeworks-automation.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tanutester/Target-automation/issues"
+    "url": "https://github.com/tanutester/Officeworks-automation/issues"
   },
-  "homepage": "https://github.com/tanutester/Target-automation#readme",
+  "homepage": "https://github.com/tanutester/Officeworks-automation#readme",
   "devDependencies": {
     "@wdio/cli": "^7.20.7",
     "@wdio/local-runner": "^7.20.7",

@@ -1,7 +1,7 @@
-const openTargetPage = (path)=> {
-    return browser.url(`https://www.Target.com.au/${path}`)
+const openOfficeworksPage = (path)=> {
+    return browser.url(`https://www.Officeworks.com.au/${path}`)
 }
 
 module.exports = {
-    openTargetPage 
+    openOfficeworksPage 
 }

@@ -1,8 +1,8 @@
 
 
-const TargetPage = require('./page');
+const OfficeworksPage = require('./page');
 const openloginPage = ()=> {
-    TargetPage.openTargetPage('login')
+    OfficeworksPage.openOfficeworksPage('login')
 }
 
 const setInputValue = async (var1, var2) => {
@@ -11,19 +11,24 @@ const setInputValue = async (var1, var2) => {
 }
 
 const enterLoginDetails = async ()=> {
-    const Target_username = process.env.TARGET_USERNAME;
-    const Target_password = process.env.TARGET_PASSWORD;
+    const Officeworks_username = process.env.OFFICEWORKS_USERNAME;
+    const Officeworks_password = process.env.OFFICEWORKS_PASSWORD;
 
     // const emailInput = $('input[id="email"]');
-    // emailInput.setValue(Target_username);
+    // emailInput.setValue(Officeworks_username);
 
     // const passwordInput = $('input[id="email"]');
-    // passwordInput.setValue(Target_password);
+    // passwordInput.setValue(Officeworks_password);
+    
+    await setInputValue( 'input[name="j_username"]', Officeworks_username );
+    await setInputValue( 'input[name="j_password"]', Officeworks_password );
+    await $('input[name="j_username"]').scrollIntoView();
 
-    await setInputValue( 'input[id="email"]', Target_username );
-    await setInputValue( 'input[id="password"]', Target_password );
-
-    await $('button[id="login-submit"]').click();
+    // await $('input[name="j_password"]').sendKeys('234234')
+    await browser.keys(['Meta', 'a'])
+    await browser.keys(['Meta', 'c'])
+    await $('.forgot-pwd + button').waitForEnabled({ timeout: 10000 });
+    await $('.forgot-pwd + button').click();
     
 }
 
@@ -53,7 +58,7 @@ module.exports = {
 /**
  * sub page containing specific selectors and methods for a specific page
  */
-// class LoginPage extends TargetPage {
+// class LoginPage extends OfficeworksPage {
 //     /**
 //      * define selectors using getter methods
 //      */
