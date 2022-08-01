@@ -1,7 +1,7 @@
 const LoginPage = require("../pageobjects/login.page");
 
 describe("Officeworks login page", () => {
-    it.skip("should not login with invalid credentials", async () => {
+    it("should not login with invalid credentials", async () => {
         await LoginPage.openloginPage();
         await LoginPage.enterLoginDetails("tinaK@gmail.com", "23242432");
         expect(
