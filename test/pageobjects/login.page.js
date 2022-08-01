@@ -1,59 +1,61 @@
-
-
-const OfficeworksPage = require('./page');
-const openloginPage = ()=> {
-    OfficeworksPage.openOfficeworksPage('login')
-}
+const OfficeworksPage = require("./page");
+const openloginPage = () => {
+    OfficeworksPage.openOfficeworksPage("app/identity/login");
+};
 
 const setInputValue = async (var1, var2) => {
     const inputText = $(var1);
     await inputText.setValue(var2);
-}
+};
 
-const enterLoginDetails = async ()=> {
-    const Officeworks_username = process.env.OFFICEWORKS_USERNAME;
-    const Officeworks_password = process.env.OFFICEWORKS_PASSWORD;
+const enterLoginDetails = async (
+    Officeworks_username,
+    Officeworks_password
+) => {
+    //const Officeworks_username = process.env.OFFICEWORKS_USERNAME;
+    //const Officeworks_password = process.env.OFFICEWORKS_PASSWORD;
 
     // const emailInput = $('input[id="email"]');
     // emailInput.setValue(Officeworks_username);
 
     // const passwordInput = $('input[id="email"]');
     // passwordInput.setValue(Officeworks_password);
-    
-    await setInputValue( 'input[name="j_username"]', Officeworks_username );
-    await setInputValue( 'input[name="j_password"]', Officeworks_password );
-    await $('input[name="j_username"]').scrollIntoView();
 
-    // await $('input[name="j_password"]').sendKeys('234234')
-    await browser.keys(['Meta', 'a'])
-    await browser.keys(['Meta', 'c'])
-    await $('.forgot-pwd + button').waitForEnabled({ timeout: 10000 });
-    await $('.forgot-pwd + button').click();
-    
-}
+    await setInputValue('input[name="username"]', Officeworks_username);
+    await setInputValue('input[name="password"]', Officeworks_password);
+    await $('button[type="submit"]').click();
+};
 
+/*const validateEmail = (email) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };*/
 
+const searchStoreLocation = async () => {
+    const postcodeInput = await $('[data-ref="location-search-bar"] input');
+    postcodeInput.setValue("3000");
+
+    const getFirstPostcode = await $(
+        '[data-ref="store-autocomplete-list"] div:first-child'
+    );
+    await getFirstPostcode.click();
+};
+
+const setMyStore = async () => {
+    await $(
+        '[data-ref="store-list"] > div:nth-child(2) a[data-ref="set-as-my-store"]'
+    ).click();
+};
 
 module.exports = {
     openloginPage,
-    enterLoginDetails
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    enterLoginDetails,
+    searchStoreLocation,
+    setMyStore,
+};
 
 /**
  * sub page containing specific selectors and methods for a specific page
