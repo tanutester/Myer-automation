@@ -1,6 +1,6 @@
 const LoginPage = require("../pageobjects/login.page");
 
-describe("Officeworks login page", () => {
+describe.skip("Officeworks login page", () => {
     it("should not login with invalid credentials", async () => {
         await LoginPage.openloginPage();
         await LoginPage.enterLoginDetails("tinaK@gmail.com", "23242432");
@@ -32,41 +32,5 @@ describe("Officeworks login page", () => {
         expect(await $('[data-ref="home-login-panel"] h3').getText()).toBe(
             "Hello Tanu"
         );
-    });
-
-    it("set location value or postcode", async () => {
-        await LoginPage.searchStoreLocation();
-        //when I click on postcode search,
-        //it will direct me to my expected link
-        const url = await browser.getUrl();
-        console.log(url);
-        expect(url).toBe(
-            "https://www.officeworks.com.au/shop/officeworks/storelocator/3000"
-        );
-    });
-
-    it("set location value or postcode", async () => {
-
-        //when click 'set-my-store' button
-        // that text should change into 'my-store'
-
-        await LoginPage.setMyStore();
-        await browser.waitUntil(
-            async () =>
-                (await $(
-                    '[data-ref="store-list"] > div:nth-child(2) a[data-ref="set-as-my-store"]'
-                ).getText()) ===
-                "My Store",
-            {
-                timeout: 5000,
-                timeoutMsg: 'expected text to be "My Store"',
-            }
-        );
-        const myStoreText = await $(
-            '[data-ref="store-list"] > div:nth-child(2) a[data-ref="set-as-my-store"]'
-        ).getText();
-        expect (myStoreText).toBe("My Store");
-
-        await browser.pause(5000);
     });
 });
