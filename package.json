@@ -4,7 +4,8 @@
   "description": "wdio based Officeworks automation",
   "main": "index.js",
   "scripts": {
-    "test": "wdio run wdio.conf.js"
+    "test": "wdio run wdio.conf.js --spec editAccountDetails.spec.js",
+    "debug": "DEBUG=true wdio run wdio.conf.js --spec editAccountDetails.spec.js"
   },
   "repository": {
     "type": "git",

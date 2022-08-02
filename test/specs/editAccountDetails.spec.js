@@ -25,8 +25,9 @@ describe("edit account details", () => {
 });
 it("go to my detail page", async () => {
     await EditAccount.addAddressLink();
-    //await EditAccount.addNewAddress();
+    await EditAccount.addNewAddress();
 
+    await browser.pause(5000)
 });
 
 

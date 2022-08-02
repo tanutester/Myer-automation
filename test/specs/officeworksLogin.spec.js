@@ -1,6 +1,6 @@
 const LoginPage = require("../pageobjects/officeworksLogin.page");
 
-describe.skip("Officeworks login page", () => {
+describe("Officeworks login page", () => {
     it("should not login with invalid credentials", async () => {
         await LoginPage.openloginPage();
         await LoginPage.enterLoginDetails("tinaK@gmail.com", "23242432");

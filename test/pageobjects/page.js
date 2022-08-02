@@ -4,5 +4,5 @@ const openOfficeworksPage = (path)=> {
 
 
 module.exports = {
-    openOfficeworksPage 
+    openOfficeworksPage,
 }
