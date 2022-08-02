@@ -1,4 +1,4 @@
-const LoginPage = require("../pageobjects/login.page");
+const LoginPage = require("../pageobjects/officeworksLogin.page");
 
 describe.skip("Officeworks login page", () => {
     it("should not login with invalid credentials", async () => {

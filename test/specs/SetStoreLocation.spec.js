@@ -1,7 +1,7 @@
 const { openOfficeworksPage } = require("../pageobjects/page");
 const setStoreLocationPage = require("../pageobjects/setStoreLocation.page");
 
-describe("Officeworks login page", () => {
+describe.skip("Officeworks login page", () => {
     it("set location value or postcode", async () => {
         await openOfficeworksPage('');
         //when I click on postcode search,
